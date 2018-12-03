@@ -1,0 +1,49 @@
+Create Table Employee
+(
+	Employee_Id int,
+	Employee_Name Varchar(50),
+	Employee_Title int,	--1300-Manager/1301-Sales Rep
+	Manager_Id int,
+	Employee_Color varchar(20),
+	Created_Date DateTime,
+	Modified_Date DateTime
+);
+
+Create Table Product
+(
+	Product_Id int,
+	Product_Name Varchar(50),
+	Active_Flag bit,
+	Created_Date DateTime,
+	Modified_Date DateTime
+);
+
+Create Table Map_Employee2Product (
+	Employee_Id int,
+	Product_Id int,
+	Created_Date DateTime,
+	Modified_Date DateTime
+	
+);
+
+Insert Into Employee(Employee_Id, Employee_Name, Employee_Title, Manager_Id, Employee_Color, Created_Date, Modified_Date )
+	VALUES (1, 'Steve Jobs', 1300, Null, Null, getdate(), getdate()); 
+
+Insert Into Employee(Employee_Id, Employee_Name, Employee_Title, Manager_Id, Employee_Color, Created_Date, Modified_Date )
+	VALUES (2, 'John Doe', 1301, 1, 'red', getdate(), getdate()); 
+
+Insert Into Employee(Employee_Id, Employee_Name, Employee_Title, Manager_Id, Employee_Color, Created_Date, Modified_Date )
+	VALUES (3, 'Jane Doe', 1301, 1, 'yellow', getdate(), getdate()); 
+
+Insert Into Employee(Employee_Id, Employee_Name, Employee_Title, Manager_Id, Employee_Color, Created_Date, Modified_Date )
+	VALUES (4, 'Donald Doe', 1301, 1, 'blue', getdate(), getdate()); 
+
+
+Insert Into Product(Product_Id, Product_Name, Active_Flag, Created_Date, Modified_Date)
+	VALUES (1, 'Square Fidget', 1, getdate(), getdate());
+
+Insert Into Product(Product_Id, Product_Name, Active_Flag, Created_Date, Modified_Date)
+	VALUES (2, 'Non-flying Drones', 1, getdate(), getdate());
+
+Insert Into Product(Product_Id, Product_Name, Active_Flag, Created_Date, Modified_Date)
+	VALUES (3, 'Hot Chocolate', 1, getdate(), getdate());

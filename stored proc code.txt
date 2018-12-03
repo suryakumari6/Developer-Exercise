@@ -1,0 +1,66 @@
+CREATE PROCEDURE [dbo].[GetEmployeesByEmploeeID]
+	@Employee_Id int,
+	@Product_Id int,
+	@Created_Date DateTime,
+	@Modified_Date DateTime
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+  Insert into Map_Employee2Product (
+	Employee_Id,
+	Product_Id,
+	Created_Date,
+	Modified_Date)
+	values(@Employee_Id,
+	@Product_Id,
+	@Created_Date,
+	@Modified_Date)
+
+END
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[GetProductdByProductID]    Script Date: 07/27/2017 22:47:20 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+CREATE PROCEDURE [dbo].[GetProductdByProductID]
+	@Product_Id int
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+   select Product_Id, Product_Name, Active_Flag, Created_Date, Modified_Date  from [Product] where Product_Id = @Product_Id
+END
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[GetEmployees]    Script Date: 07/27/2017 22:47:21 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+CREATE PROCEDURE [dbo].[GetEmployees] 
+	
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+   select Employee_Id, Employee_Name, Employee_Title, Manager_Id, Employee_Color, Created_Date, Modified_Date from [Employee]
+END
+
+GO
